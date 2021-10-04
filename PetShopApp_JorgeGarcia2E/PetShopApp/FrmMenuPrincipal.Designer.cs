@@ -29,6 +29,7 @@ namespace PetShopApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace PetShopApp
             this.btnCerrar = new System.Windows.Forms.Button();
             this.grpBuscar = new System.Windows.Forms.GroupBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.tmrSinActividad = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.grpBuscar.SuspendLayout();
@@ -248,6 +250,11 @@ namespace PetShopApp
             this.cmbTipo.TabIndex = 12;
             this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
+            // tmrSinActividad
+            // 
+            this.tmrSinActividad.Interval = 300000;
+            this.tmrSinActividad.Tick += new System.EventHandler(this.tmrSinActividad_Tick);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -273,8 +280,9 @@ namespace PetShopApp
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenuPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
+            this.MouseHover += new System.EventHandler(this.FrmMenuPrincipal_MouseHover_1);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMenuPrincipal_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.grpBuscar.ResumeLayout(false);
@@ -303,5 +311,6 @@ namespace PetShopApp
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.GroupBox grpBuscar;
         private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Timer tmrSinActividad;
     }
 }

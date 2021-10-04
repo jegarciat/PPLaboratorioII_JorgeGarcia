@@ -12,6 +12,7 @@ namespace PetShopApp
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+            tmrSinActividad.Start();
         }
 
         /// <summary>
@@ -214,9 +215,21 @@ namespace PetShopApp
                 ListarProductos();
         }
 
-        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        private void tmrSinActividad_Tick(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.DialogResult = DialogResult.Yes;
+            tmrSinActividad.Enabled = false;
+        }
+
+        private void FrmMenuPrincipal_MouseMove(object sender, MouseEventArgs e)
+        {
+            tmrSinActividad.Stop();
+        }
+
+        private void FrmMenuPrincipal_MouseHover_1(object sender, EventArgs e)
+        {
+            tmrSinActividad.Enabled = true;
+            tmrSinActividad.Start();
         }
     }
 }
