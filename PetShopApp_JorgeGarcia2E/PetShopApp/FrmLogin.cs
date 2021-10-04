@@ -21,6 +21,11 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Se encarga de loguear un usuario en la aplicación.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             if (PetShop.Loguearse(this.txtUser.Text, this.txtClave.Text))
@@ -45,12 +50,22 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Botón para inicio rápido como Administrador.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             this.txtUser.Text = "admin";
             this.txtClave.Text = "admin1";
         }
 
+        /// <summary>
+        /// Botón para inicio rápido como Empleado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
             this.txtUser.Text = "maria";

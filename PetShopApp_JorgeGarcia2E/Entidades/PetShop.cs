@@ -219,36 +219,6 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Modifica los datos de un empleado.
-        /// </summary>
-        /// <param name="auxEmpleado"></param>
-        public static void ModificarEmpleado(Empleado auxEmpleado)
-        {
-            for (int i = 0; i < empleados.Count; i++)
-            {
-                if (empleados[i] == auxEmpleado)
-                {
-                    empleados[i] = auxEmpleado;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Modifica los datos de un cliente.
-        /// </summary>
-        /// <param name="auxCliente"></param>
-        public static void ModificarCliente(Cliente auxCliente)
-        {
-            for (int i = 0; i < clientes.Count; i++)
-            {
-                if (clientes[i] == auxCliente)
-                {
-                    clientes[i] = auxCliente;
-                }
-            }
-        }
-
-        /// <summary>
         /// Trata de realizar una venta si el dinero del cliente es suficiente y existe stock.
         /// </summary>
         /// <param name="cliente">Cliente que realiza la compra.</param>

@@ -14,11 +14,20 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor que recibe el usuario logueado.
+        /// </summary>
+        /// <param name="auxUsuario"></param>
         public FrmMenuPrincipal(Usuario auxUsuario) : this()
         {
             this.usuario = auxUsuario;
         }
 
+        /// <summary>
+        /// Dependiendo del tipo de usuario cambian algunas características del formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             this.lblSaludo.Text = $"¡Hola {usuario.Nombre} {usuario.Apellido}!";
@@ -45,6 +54,11 @@ namespace PetShopApp
             this.cmbTipo.Items.Add("Accesorio");
         }
 
+        /// <summary>
+        /// Abre el formulario que se encarga de administrar empleados.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             FrmEmpleados frmEmpleados = new FrmEmpleados();
@@ -57,6 +71,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Abre el formulario que se encarga de administrar clientes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClientes_Click(object sender, EventArgs e)
         {
             FrmClientes frmClientes = new FrmClientes();
@@ -69,6 +88,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Abre el formulario que se encarga de administrar administradores.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdministradores_Click(object sender, EventArgs e)
         {
             FrmAdministradores frmAdministradores = new FrmAdministradores();
@@ -81,6 +105,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Abre el formulario que se encarga de agregar un producto.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             FrmAltaProducto frmAltaProducto = new FrmAltaProducto();
@@ -92,6 +121,9 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Carga todos los productos del comercio en el dataGridView
+        /// </summary>
         private void ListarProductos()
         {
             int n;
@@ -118,6 +150,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Abre el formulario que se encarga de las ventas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVender_Click(object sender, EventArgs e)
         {
             FrmVender frmVender = new FrmVender(usuario);
@@ -130,6 +167,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Abre el formulario con los informes relevantes del comercio.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInformes_Click(object sender, EventArgs e)
         {
             FrmInformes informes = new FrmInformes();
@@ -145,6 +187,10 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Muestra en la lista dependiendo del tipo seleccionado por el usuario.
+        /// </summary>
+        /// <param name="tipo"></param>
         private void ListarPorTipo(string tipo)
         {
             int n;

@@ -18,6 +18,11 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra los informes del comercio.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmInformes_Load(object sender, EventArgs e)
         {
             lblComercioRS.Text = PetShop.RazonSocial;

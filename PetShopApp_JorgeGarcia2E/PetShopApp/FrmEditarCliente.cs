@@ -20,11 +20,20 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor que recibe un cliente y lo setea en atributo privado del formulario.
+        /// </summary>
+        /// <param name="empleado"></param>
         public FrmEditarCliente(Cliente cliente): this()
         {
             this.cliente = cliente;
         }
 
+        /// <summary>
+        /// Carga los textBoxs con los datos del cliente recibido.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmEditarCliente_Load(object sender, EventArgs e)
         {
             this.txtID.Text = cliente.ID.ToString();
@@ -33,6 +42,11 @@ namespace PetShopApp
             this.txtDniEdit.Text = cliente.DNI.ToString();
         }
 
+        /// <summary>
+        /// Edita los datos de un cliente en la lista del comercio.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (cliente is not null && !HayError())
@@ -40,14 +54,13 @@ namespace PetShopApp
                 cliente.Nombre = this.txtNombreEdit.Text;
                 cliente.Apellido = this.txtApellidoEdit.Text;
 
-                PetShop.ModificarCliente(cliente);
-
                 this.DialogResult = DialogResult.OK;
             }
         }
 
+
         /// <summary>
-        /// Comprueba si hay un dato inválido en cada textBox.
+        /// Valida cada uno de los textos y si el dato es inválido escribe un mensaje en el placeholder indicando el error.
         /// </summary>
         /// <returns>false si no hay errores, true en caso contrario.</returns>
         private bool HayError()

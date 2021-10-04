@@ -22,11 +22,21 @@ namespace PetShopApp
             
         }
 
+        /// <summary>
+        /// Instancia el sonido que se va a usar en caso de que la alta sea exitosa.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAltaEmpleado_Load(object sender, EventArgs e)
         {
             sonido = new SoundPlayer(@"C:\Users\jorge\source\1erParcial\PetShopApp_JorgeGarcia2E\Sonidos\InicioExitoso.wav");
         }
 
+        /// <summary>
+        /// Si no hay errores instancia un nuevo empleado con los datos recibidos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (!HayError())
@@ -49,7 +59,7 @@ namespace PetShopApp
         }
 
         /// <summary>
-        /// Comprueba si hay un dato inválido en cada textBox.
+        /// Valida cada uno de los textos y si el dato es inválido escribe un mensaje en el placeholder indicando el error.
         /// </summary>
         /// <returns>false si no hay errores, true en caso contrario.</returns>
         private bool HayError()

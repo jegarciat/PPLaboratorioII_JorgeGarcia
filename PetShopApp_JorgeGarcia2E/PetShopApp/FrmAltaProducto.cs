@@ -18,6 +18,11 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga los tipos de productos en el comboBox y el estado de algunos controles. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAltaProducto_Load(object sender, EventArgs e)
         {
             this.cmbTipo.Items.Add("Alimento");
@@ -29,6 +34,11 @@ namespace PetShopApp
             this.btnAceptar.Enabled = false;
         }
 
+        /// <summary>
+        /// Cambia la visibilidad del comboBox dependiendo del tipo seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.cmbCategoria.Visible = true;
@@ -49,6 +59,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Si no hay errores en los datos se instancia un producto del tipo seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (!HayError())
@@ -83,7 +98,7 @@ namespace PetShopApp
         }
 
         /// <summary>
-        /// Comprueba si hay un dato inválido en cada textBox.
+        /// Valida cada uno de los textos y si el dato es inválido escribe un mensaje en el placeholder indicando el error.
         /// </summary>
         /// <returns>false si no hay errores, true en caso contrario.</returns>
         private bool HayError()

@@ -16,18 +16,36 @@ namespace PetShopApp
         private Cliente cliente;
         private Producto producto;
         private Dictionary<int, int> carrito;
+        private static double iva;
 
+        static FrmVender()
+        {
+            iva = 0.21;
+        }
+
+        /// <summary>
+        /// Instancia los componentes y el diccionario.
+        /// </summary>
         public FrmVender()
         {
             InitializeComponent();
             carrito = new Dictionary<int, int>();
         }
 
+        /// <summary>
+        /// Constructor que recibe un empleado que va a realizar la vneta y lo setea en atributo privado del formulario.
+        /// </summary>
+        /// <param name="empleado"></param>
         public FrmVender(Usuario vendedor) : this()
         {
             this.usuario = vendedor;
         }
 
+        /// <summary>
+        /// Setea algunos controles del formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmVender_Load(object sender, EventArgs e)
         {
             this.txtID.Enabled = false;
@@ -47,6 +65,11 @@ namespace PetShopApp
             this.DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// Abre un formulario para dar de alta un nuevo cliente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             FrmAltaCliente frmAltaCliente = new FrmAltaCliente();
@@ -61,6 +84,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Busca un cliente según el criterio de busqueda elegido.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             switch (this.cmbFiltroCliente.SelectedItem)
@@ -77,6 +105,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Abre un formulario con la lista de productos y setea los datos del producto seleccionado en campos correspondientes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             FrmListaProductos listaProductos = new FrmListaProductos();
@@ -146,6 +179,11 @@ namespace PetShopApp
             }
         }
 
+        /// <summary>
+        /// Valida que exista la cantidad requeridda y suma al producto a listBox o muestra un mensaje de advertencia.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             if (ValidarProducto())
@@ -160,7 +198,7 @@ namespace PetShopApp
                 //Se calcula el subtotal y el total para mostrarlo a medida que se van sumando productos.
                 double auxSubTotal = this.producto.PrecioUnitario * (int)this.numCantidad.Value;
                 this.txtSubtotal.Text = (int.Parse(txtSubtotal.Text) + auxSubTotal).ToString();
-                double auxPrecioTotal = (int.Parse(txtSubtotal.Text) + int.Parse(txtSubtotal.Text) * 0.21);
+                double auxPrecioTotal = (int.Parse(txtSubtotal.Text) + int.Parse(txtSubtotal.Text) * iva);
                 this.txtPrecioTotal.Text = auxPrecioTotal.ToString();
             }
             else
@@ -192,11 +230,16 @@ namespace PetShopApp
             return false;
         }
 
+        /// <summary>
+        /// Realiza una venta si las condiciones están dadas o muestra un mensaje de error en caso contrario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVender_Click(object sender, EventArgs e)
         {
             SoundPlayer sound;
             double precioTotal = double.Parse(this.txtPrecioTotal.Text);
-            string mensaje = string.Empty;
+            string mensaje;
 
             if (DatosCompletosVenta())
             {
@@ -266,7 +309,7 @@ namespace PetShopApp
         }
 
         /// <summary>
-        /// Limpia los datos del producto y el listBox.
+        /// Limpia los datos del producto y el carrito.
         /// </summary>
         private void Limpiar()
         {

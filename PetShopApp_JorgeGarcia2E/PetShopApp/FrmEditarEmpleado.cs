@@ -20,11 +20,20 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor que recibe un empleado y lo setea en atributo privado del formulario.
+        /// </summary>
+        /// <param name="empleado"></param>
         public FrmEditarEmpleado(Empleado empleado) : this()
         {
             this.empleado = empleado;
         }
 
+        /// <summary>
+        /// Carga los textBoxs con los datos del empleado recibido.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmEditarEmpleado_Load(object sender, EventArgs e)
         {
             this.txtDniEdit.Text = empleado.DNI.ToString();
@@ -35,6 +44,11 @@ namespace PetShopApp
             this.txtClaveEdit.Text = empleado.Clave;
         }
 
+        /// <summary>
+        /// Edita los datos del cliente en la lista del comercio.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (empleado is not null && !HayError())
@@ -45,14 +59,12 @@ namespace PetShopApp
                 empleado.User = this.txtUsuarioEdit.Text;
                 empleado.Clave = this.txtClaveEdit.Text;
 
-                PetShop.ModificarEmpleado(empleado);
-
                 this.DialogResult = DialogResult.OK;
             }
         }
 
         /// <summary>
-        /// Comprueba si hay un dato inválido en cada textBox.
+        /// Valida cada uno de los textos y si el dato es inválido escribe un mensaje en el placeholder indicando el error.
         /// </summary>
         /// <returns>false si no hay errores, true en caso contrario.</returns>
         private bool HayError()

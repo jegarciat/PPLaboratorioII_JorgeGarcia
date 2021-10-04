@@ -18,11 +18,21 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga los empleados para mostrarlos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
             CargarListaEmpleados();
         }
 
+        /// <summary>
+        /// Abre un formulario para registrar un nuevo empleado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmAltaEmpleado altaEmpleado = new FrmAltaEmpleado();
@@ -41,6 +51,9 @@ namespace PetShopApp
             }           
         }
 
+        /// <summary>
+        /// Carga todos los empleados del comercio en el dataGridView.
+        /// </summary>
         private void CargarListaEmpleados()
         {
             int n;
@@ -60,11 +73,11 @@ namespace PetShopApp
             this.dgvListaEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-
+        /// <summary>
+        /// Abre un formulario para editar los datos del empleado seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Empleado empleadoEdit;
@@ -88,6 +101,11 @@ namespace PetShopApp
         }
 
         private void FrmEmpleados_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }

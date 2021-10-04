@@ -20,6 +20,11 @@ namespace PetShopApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga el comboBox con los tipos de productos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmListaProductos_Load(object sender, EventArgs e)
         {
             ListarProductos();
@@ -29,6 +34,9 @@ namespace PetShopApp
             this.cmbTipos.Items.Add("Accesorio");
         }
 
+        /// <summary>
+        /// Propiedad de solo lectura del producto seleccionado por el usuario.
+        /// </summary>
         public Producto ProductoSeleccionado
         {
             get
@@ -58,6 +66,11 @@ namespace PetShopApp
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
+        /// <summary>
+        /// Selecciona un producto y lo busca en la lista de productos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnElegir_Click(object sender, EventArgs e)
         {
             if (this.dgvProductos.SelectedRows.Count == 1)
@@ -73,7 +86,7 @@ namespace PetShopApp
         }
 
         /// <summary>
-        /// Lista los productor por el tipo seleccionado en el comboBox.
+        /// Lista los productos por el tipo seleccionado en el comboBox.
         /// </summary>
         /// <param name="tipo"></param>
         private void ListarPorTipo(string tipo)
