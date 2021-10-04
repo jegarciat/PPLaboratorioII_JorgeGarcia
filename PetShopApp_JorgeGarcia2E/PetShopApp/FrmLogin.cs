@@ -31,7 +31,7 @@ namespace PetShopApp
             if (PetShop.Loguearse(this.txtUser.Text, this.txtClave.Text))
             {
                 FrmMenuPrincipal home = new FrmMenuPrincipal(PetShop.BuscarUsuario(this.txtUser.Text));
-                sonido = new SoundPlayer(@"C:\Users\jorge\source\1erParcial\PetShopApp_JorgeGarcia2E\Sonidos\InicioExitoso.wav");
+                sonido = new SoundPlayer(@"C:\Users\jorge\source\1erParcial\PetShopApp_JorgeGarcia2E\Sonidos\Welcome.wav");
                 sonido.Play();
 
                 this.Hide();

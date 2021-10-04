@@ -79,7 +79,7 @@ namespace Entidades
             clientes.Add(new Cliente("Andrea", "Ruiz", 45896321));
             clientes.Add(new Cliente("Susana", "Oria", 46896321, 15420));
             clientes.Add(new Cliente("Aitor", "Tilla", 47896321, 0));
-            clientes.Add(new Cliente("Felipe", "Lotas", 48896321, 3850));
+            clientes.Add(new Cliente("Felipe", "Salguero", 48896321, 3850));
             clientes.Add(new Cliente("Carlos", "Perez", 49896321, 87000));
             clientes.Add(new Cliente("Teresa", "Flores", 50896321, 6000));
             clientes.Add(new Cliente("Ricky", "Ricon", 53896321, 150000));

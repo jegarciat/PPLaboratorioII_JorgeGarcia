@@ -6,7 +6,6 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Windows.Forms;
-using System.Runtime;
 
 namespace PetShopApp
 {
@@ -308,6 +307,11 @@ namespace PetShopApp
             factura.Close();
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
         /// <summary>
         /// Limpia los datos del producto y el carrito.
         /// </summary>
@@ -316,11 +320,16 @@ namespace PetShopApp
             this.txtPrecioTotal.Text = "0";
             this.txtSubtotal.Text = "0";
             this.lstCarrito.Items.Clear();
-            
+
             this.txtDescripcion.Clear();
             this.numCantidad.Value = 0;
             this.txtTipo.Clear();
             this.txtPrecioUnitario.Clear();
+        }
+
+        private void FrmVender_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

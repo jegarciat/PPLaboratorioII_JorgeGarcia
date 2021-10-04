@@ -213,5 +213,10 @@ namespace PetShopApp
             else
                 ListarProductos();
         }
+
+        private void FrmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

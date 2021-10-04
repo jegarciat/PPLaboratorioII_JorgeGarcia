@@ -27,7 +27,7 @@ namespace PetShopApp
         {
             lblComercioRS.Text = PetShop.RazonSocial;
             lblComercioCuit.Text = PetShop.Cuit;
-            lblFacturacion.Text = PetShop.FacturacionTotal.ToString();
+            lblFacturacion.Text = $"{PetShop.FacturacionTotal}$";
 
 
             if (((Empleado)PetShop.Empleados).VentasRealizadas > 0)

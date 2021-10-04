@@ -273,6 +273,7 @@ namespace PetShopApp
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenuPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

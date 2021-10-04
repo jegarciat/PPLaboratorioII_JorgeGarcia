@@ -61,6 +61,7 @@ namespace PetShopApp
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
             this.txtPrecioTotal = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.grpProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             this.grpDatosCliente.SuspendLayout();
@@ -98,6 +99,7 @@ namespace PetShopApp
             // 
             // grpProducto
             // 
+            this.grpProducto.Controls.Add(this.btnLimpiar);
             this.grpProducto.Controls.Add(this.lblTipo);
             this.grpProducto.Controls.Add(this.txtTipo);
             this.grpProducto.Controls.Add(this.lblPrecioUnitario);
@@ -366,6 +368,16 @@ namespace PetShopApp
             this.txtPrecioTotal.Size = new System.Drawing.Size(193, 22);
             this.txtPrecioTotal.TabIndex = 9;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(9, 178);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(117, 23);
+            this.btnLimpiar.TabIndex = 13;
+            this.btnLimpiar.Text = "Limpiar carrito";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // FrmVender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -389,6 +401,7 @@ namespace PetShopApp
             this.Name = "FrmVender";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vender";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmVender_FormClosed);
             this.Load += new System.EventHandler(this.FrmVender_Load);
             this.grpProducto.ResumeLayout(false);
             this.grpProducto.PerformLayout();
@@ -433,5 +446,6 @@ namespace PetShopApp
         private System.Windows.Forms.TextBox txtPrecioUnitario;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
