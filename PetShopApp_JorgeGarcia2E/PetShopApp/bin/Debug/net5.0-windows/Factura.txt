@@ -1,0 +1,31 @@
+---- FACTURA ----
+Pet Shop Garcia S.L.
+30-68537634-9
+
+- Cliente -
+DNI: 32412563
+Nombre: Marcos
+Apellido: Garcia
+
+Precio total: 8330.85
+
+Compras realizadas
+------------------------------
+
+Descripción: Cat Chow 3KG
+
+Precio unitario: 3240
+
+Alimento para: Gato
+
+Cantidad: 2
+------------------------------
+
+Descripción: Basken Doble
+
+Precio unitario: 135
+
+Articulo de cuidado: Antiparasito
+
+Cantidad: 3
+
